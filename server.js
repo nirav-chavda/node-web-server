@@ -4,6 +4,8 @@ const fs = require('fs');
 
 var app = express();
 
+const port = process.env.PORT || 3000;
+
 // register partials directory
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine','hbs');
@@ -61,4 +63,4 @@ app.get('/bad', (req,res) => {
   });
 });
 
-app.listen(3000, () => { console.log('server started on port number 3000'); });
+app.listen(port, () => { console.log(`server started on port number ${port}`); });
